@@ -252,7 +252,36 @@ class Program
         Console.WriteLine("Confirmación: Almacén agregado exitosamente.");
         Console.ReadLine();
     }
+    static void EliminarAlmacen()
+    {
+        Console.Clear();
+        Console.WriteLine("===== Pantalla para Eliminar Almacén =====");
+        Console.WriteLine("--------------------------------------------------");
+        Console.WriteLine("Ingrese el nombre del almacén a eliminar:");
+        string nombre = Console.ReadLine();
 
+        int indice = Array.IndexOf(almacenes, nombre);
+
+        if (indice != -1)
+        {
+            for (int i = indice; i < contadorAlmacenes - 1; i++)
+            {
+                almacenes[i] = almacenes[i + 1];
+            }
+
+            contadorAlmacenes--;
+
+            Console.WriteLine("--------------------------------------------------");
+            Console.WriteLine("Confirmación: Almacén eliminado exitosamente.");
+        }
+        else
+        {
+            Console.WriteLine("--------------------------------------------------");
+            Console.WriteLine("Error: El almacén no existe.");
+        }
+
+        Console.ReadLine();
+    }
 
 }
 

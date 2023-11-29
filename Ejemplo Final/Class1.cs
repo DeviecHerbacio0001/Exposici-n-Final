@@ -237,6 +237,22 @@ class Program
             }
         }
     }
+    static void AgregarAlmacen()
+    {
+        Console.Clear();
+        Console.WriteLine("===== Pantalla para Agregar Almacén =====");
+        Console.WriteLine("--------------------------------------------------");
+        Console.WriteLine("Ingrese el nombre del nuevo almacén:");
+        string nombre = Console.ReadLine();
 
-} 
+        almacenes[contadorAlmacenes] = nombre;
+        contadorAlmacenes++;
+
+        Console.WriteLine("--------------------------------------------------");
+        Console.WriteLine("Confirmación: Almacén agregado exitosamente.");
+        Console.ReadLine();
+    }
+
+
+}
 

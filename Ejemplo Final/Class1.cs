@@ -83,15 +83,37 @@ class Program
             }
         }
     }
+    static void AgregarYExtraerProductos()
+    {
+        // Implementar la lógica para agregar y extraer productos aquí
+    }
+    static void AgregarProducto()
+    {
+        Console.Clear();
+        Console.WriteLine("===== Pantalla para Agregar Producto =====");
+        Console.WriteLine("--------------------------------------------------");
+        Console.WriteLine("Ingrese el nombre del producto:");
+        string nombre = Console.ReadLine();
+        Console.WriteLine("Ingrese el precio del producto:");
+        double precio = double.Parse(Console.ReadLine());
+        Console.WriteLine("Ingrese la cantidad del producto:");
+        int cantidad = int.Parse(Console.ReadLine());
+
+        productos[contadorProductos] = nombre;
+        precios[contadorProductos] = precio;
+        cantidades[contadorProductos] = cantidad;
+        contadorProductos++;
+
+        Console.WriteLine("--------------------------------------------------");
+        Console.WriteLine("Confirmación: Producto agregado exitosamente.");
+        Console.ReadLine();
+    }
 
     static void GestionarAlmacenes()
     {
         // Implementar la lógica para gestionar almacenes aquí
     }
 
-    static void AgregarYExtraerProductos()
-    {
-        // Implementar la lógica para agregar y extraer productos aquí
-    }falso
+   
 } 
 

@@ -92,6 +92,6 @@ class Program
     static void AgregarYExtraerProductos()
     {
         // Implementar la lógica para agregar y extraer productos aquí
-    }
+    }falso
 } 
 

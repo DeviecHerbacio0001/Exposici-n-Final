@@ -78,9 +78,11 @@ class Program
                     break;
                 case "3":
                     // Implementar la lógica para modificar producto aquí
+                    ModificarProducto();
                     break;
                 case "4":
                     // Implementar la lógica para mostrar inventario aquí
+                    MostrarInventario();
                     break;
                 case "5":
                     // Salir del menú de gestión de productos

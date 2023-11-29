@@ -11,6 +11,8 @@ class Program
     static int[] cantidades = new int[100];
     static int contadorProductos = 0;
 
+    static string[] almacenes = new string[100];
+    static int contadorAlmacenes = 0;
     static void Main()
     {
         while (true)
@@ -223,13 +225,13 @@ class Program
             switch (opcionAlmacenes)
             {
                 case 1:
-                   
+                    AgregarAlmacen();
                     break;
                 case 2:
-                   
+                    EliminarAlmacen();
                     break;
                 case 3:
-                    
+                    MostrarAlmacenes();
                     break;
                 default:
                     volver = true;

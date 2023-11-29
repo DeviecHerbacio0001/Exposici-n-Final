@@ -93,5 +93,5 @@ class Program
     {
         // Implementar la lógica para agregar y extraer productos aquí
     }
-} hola
+} 
 

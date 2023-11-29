@@ -282,6 +282,20 @@ class Program
 
         Console.ReadLine();
     }
+    static void MostrarAlmacenes()
+    {
+        Console.Clear();
+        Console.WriteLine("===== Pantalla para Mostrar Almacenes =====");
+        Console.WriteLine("--------------------------------------------------");
+        Console.WriteLine("Lista de Almacenes:");
+
+        for (int i = 0; i < contadorAlmacenes; i++)
+        {
+            Console.WriteLine($"Almacén {i + 1}: {almacenes[i]}");
+        }
+
+        Console.ReadLine();
+    }
 
 }
 

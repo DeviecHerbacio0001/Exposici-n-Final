@@ -10,7 +10,7 @@ class Program
     {
         while (true)
         {
-            Console.WriteLine("==================================================");
+            
             Console.WriteLine("||                                              ||");
             Console.WriteLine("||     Sistema de Inventario \"Mi Tiendita\"      ||");
             Console.WriteLine("||                                              ||");

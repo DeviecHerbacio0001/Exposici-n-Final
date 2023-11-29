@@ -148,6 +148,37 @@ class Program
 
         Console.ReadLine();
     }
+    static void ModificarProducto()
+    {
+        Console.Clear();
+        Console.WriteLine("===== Pantalla para Modificar Producto =====");
+        Console.WriteLine("--------------------------------------------------");
+        Console.WriteLine("Ingrese el nombre del producto a modificar:");
+        string nombre = Console.ReadLine();
+
+        int indice = Array.IndexOf(productos, nombre);
+
+        if (indice != -1)
+        {
+            Console.WriteLine("Ingrese el nuevo precio:");
+            double precio = double.Parse(Console.ReadLine());
+            Console.WriteLine("Ingrese la nueva cantidad:");
+            int cantidad = int.Parse(Console.ReadLine());
+
+            precios[indice] = precio;
+            cantidades[indice] = cantidad;
+
+            Console.WriteLine("--------------------------------------------------");
+            Console.WriteLine("Confirmación: Producto modificado exitosamente.");
+        }
+        else
+        {
+            Console.WriteLine("--------------------------------------------------");
+            Console.WriteLine("Error: El producto no existe.");
+        }
+
+        Console.ReadLine();
+    }
 
 
     static void GestionarAlmacenes()

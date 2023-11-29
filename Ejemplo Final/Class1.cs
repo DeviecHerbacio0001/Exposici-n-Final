@@ -201,7 +201,42 @@ class Program
     {
         // Implementar la lógica para gestionar almacenes aquí
     }
+    static void GestionarAlmacenes()
+    {
+        bool volver = false;
 
-   
+        while (!volver)
+        {
+            Console.Clear();
+            Console.WriteLine("--------------------------------------------------");
+            Console.WriteLine("||       Gestionar Almacenes - Mi Tiendita      ||");
+            Console.WriteLine("--------------------------------------------------");
+            Console.WriteLine("|| 1. Agregar Almacén                           ||");
+            Console.WriteLine("|| 2. Eliminar Almacén                          ||");
+            Console.WriteLine("|| 3. Mostrar Almacenes                         ||");
+            Console.WriteLine("|| 4. Volver al Menú Principal                  ||");
+            Console.WriteLine("--------------------------------------------------");
+            Console.WriteLine("Seleccione una opción:");
+
+            int opcionAlmacenes = int.Parse(Console.ReadLine());
+
+            switch (opcionAlmacenes)
+            {
+                case 1:
+                   
+                    break;
+                case 2:
+                   
+                    break;
+                case 3:
+                    
+                    break;
+                default:
+                    volver = true;
+                    break;
+            }
+        }
+    }
+
 } 
 

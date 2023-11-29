@@ -179,6 +179,20 @@ class Program
 
         Console.ReadLine();
     }
+    static void MostrarInventario()
+    {
+        Console.Clear();
+        Console.WriteLine("===== Pantalla para Mostrar Inventario =====");
+        Console.WriteLine("--------------------------------------------------");
+        Console.WriteLine("Inventario Actual:");
+
+        for (int i = 0; i < contadorProductos; i++)
+        {
+            Console.WriteLine($"Producto {i + 1}: {productos[i]} - Precio: ${precios[i]} - Cantidad: {cantidades[i]}");
+        }
+
+        Console.ReadLine();
+    }
 
 
     static void GestionarAlmacenes()

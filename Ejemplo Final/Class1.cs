@@ -6,6 +6,11 @@ using System.Threading.Tasks;
 
 class Program
 {
+    static string[] productos = new string[100];
+    static double[] precios = new double[100];
+    static int[] cantidades = new int[100];
+    static int contadorProductos = 0;
+
     static void Main()
     {
         while (true)
@@ -64,9 +69,12 @@ class Program
             {
                 case "1":
                     // Implementar la lógica para agregar producto aquí
+                    AgregarProducto();
                     break;
                 case "2":
                     // Implementar la lógica para eliminar producto aquí
+                    EliminarProducto();
+
                     break;
                 case "3":
                     // Implementar la lógica para modificar producto aquí
@@ -108,6 +116,39 @@ class Program
         Console.WriteLine("Confirmación: Producto agregado exitosamente.");
         Console.ReadLine();
     }
+    static void EliminarProducto()
+    {
+        Console.Clear();
+        Console.WriteLine("===== Pantalla para Eliminar Producto =====");
+        Console.WriteLine("--------------------------------------------------");
+        Console.WriteLine("Ingrese el nombre del producto a eliminar:");
+        string nombre = Console.ReadLine();
+
+        int indice = Array.IndexOf(productos, nombre);
+
+        if (indice != -1)
+        {
+            for (int i = indice; i < contadorProductos - 1; i++)
+            {
+                productos[i] = productos[i + 1];
+                precios[i] = precios[i + 1];
+                cantidades[i] = cantidades[i + 1];
+            }
+
+            contadorProductos--;
+
+            Console.WriteLine("--------------------------------------------------");
+            Console.WriteLine("Confirmación: Producto eliminado exitosamente.");
+        }
+        else
+        {
+            Console.WriteLine("--------------------------------------------------");
+            Console.WriteLine("Error: El producto no existe.");
+        }
+
+        Console.ReadLine();
+    }
+
 
     static void GestionarAlmacenes()
     {

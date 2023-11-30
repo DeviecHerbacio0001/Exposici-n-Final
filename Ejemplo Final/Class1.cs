@@ -41,7 +41,7 @@ class Program
                     GestionarAlmacenes();
                     break;
                 case "3":
-                    GestionarProductos();
+                    AgregarYExtraerProductos();
                     break;
                 default:
                     Console.WriteLine("Opción no válida. Intente de nuevo.");
@@ -99,10 +99,7 @@ class Program
             }
         }
     }
-    static void AgregarYExtraerProductos()
-    {
-        // Implementar la lógica para agregar y extraer productos aquí
-    }
+   
     static void AgregarProducto()
     {
         Console.Clear();
@@ -299,8 +296,7 @@ class Program
 
         Console.ReadLine();
     }
-    class InventoryManagement
-    {
+    
     static void AgregarYextraerProductos()
     {
         // Supongamos que cada almacén es un diccionario que almacena productos y sus cantidades
@@ -308,6 +304,7 @@ class Program
         int opcion = 0;
         do
         {
+            Console.Clear ();
             Console.WriteLine("-----------------------------------------------");
             Console.WriteLine("|| Agregar y Extraer Productos - Mi Tiendita ||");
             Console.WriteLine("-----------------------------------------------");
@@ -323,6 +320,7 @@ class Program
             switch (opcion)
             {
                 case 1:
+                    Console.Clear();
                     Console.WriteLine("===== Pantalla para Ingresar Producto en Almacén =====");
                     Console.WriteLine("------------------------------------------------------");
                     Console.Write("Seleccione el almacén: ");
@@ -350,6 +348,7 @@ class Program
                     Console.WriteLine("Confirmación: Producto ingresado en el almacén exitosamente.");
                     break;
                 case 2:
+                    Console.Clear();
                     Console.WriteLine("===== Pantalla para Extraer Producto del Almacén =====");
                     Console.WriteLine("------------------------------------------------------");
                     Console.Write("Seleccione el almacén: ");
@@ -373,6 +372,7 @@ class Program
                     }
                     break;
                 case 3:
+                    Console.Clear();
                     Console.WriteLine("===== Pantalla para Ver Stock Actual =====");
                     Console.WriteLine("------------------------------------------------------");
                     Console.WriteLine("Stock Actual en Todos los Almacenes:");

@@ -93,6 +93,7 @@ class Program
                     break;
                 case "5":
                     // Salir del menú de gestión de productos
+                    Console.Clear();
                     volver = true;
                     return;
                 default:
@@ -202,7 +203,6 @@ class Program
     }
 
 
-   
     static void GestionarAlmacenes()
     {
         bool volver = false;
@@ -234,6 +234,7 @@ class Program
                     MostrarAlmacenes();
                     break;
                 default:
+                    Console.Clear();
                     volver = true;
                     break;
             }

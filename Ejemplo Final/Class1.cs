@@ -13,8 +13,10 @@ class Program
 
     static string[] almacenes = new string[100];
     static int contadorAlmacenes = 0;
-    static void Main()
+   
+    static void Main(string[] args
     {
+        
         while (true)
         {
             Console.WriteLine("==================================================");
@@ -39,7 +41,7 @@ class Program
                     GestionarAlmacenes();
                     break;
                 case "3":
-                    AgregarYExtraerProductos();
+                    GestionarProductos();
                     break;
                 default:
                     Console.WriteLine("Opción no válida. Intente de nuevo.");
@@ -50,6 +52,7 @@ class Program
 
     static void GestionarProductos()
     {
+        bool volver = false;
         while (true)
         {
             Console.WriteLine("==================================================");
@@ -88,6 +91,7 @@ class Program
                     break;
                 case "5":
                     // Salir del menú de gestión de productos
+                    volver = true;
                     return;
                 default:
                     Console.WriteLine("Opción no válida. Intente de nuevo.");
@@ -199,11 +203,8 @@ class Program
     }
 
 
+   
     static void GestionarAlmacenes()
-    {
-        // Implementar la lógica para gestionar almacenes aquí
-    }
-    static void Gestionar()
     {
         bool volver = false;
 
@@ -300,7 +301,7 @@ class Program
     }
     class InventoryManagement
     {
-    static void Main()
+    static void AgregarYextraerProductos()
     {
         // Supongamos que cada almacén es un diccionario que almacena productos y sus cantidades
         Dictionary<string, Dictionary<string, int>> almacenes = new Dictionary<string, Dictionary<string, int>>();
@@ -395,7 +396,10 @@ class Program
             }
         } while (opcion != 4);
     }
+
 }
-}
+
+
+
 
 

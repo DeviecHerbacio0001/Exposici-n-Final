@@ -14,7 +14,7 @@ class Program
     static string[] almacenes = new string[100];
     static int contadorAlmacenes = 0;
    
-    static void Main(string[] args
+    static void Main()
     {
         
         while (true)
@@ -41,7 +41,8 @@ class Program
                     GestionarAlmacenes();
                     break;
                 case "3":
-                    AgregarYExtraerProductos();
+                    AgregarYextraerProductos();
+                    
                     break;
                 default:
                     Console.WriteLine("Opción no válida. Intente de nuevo.");

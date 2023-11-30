@@ -314,7 +314,7 @@ class Program
             Console.WriteLine("|| 1. Ingresar Producto al Almacén           ||");
             Console.WriteLine("|| 2. Extraer Producto del Almacén           ||");
             Console.WriteLine("|| 3. Ver Stock Actual                       ||");
-            Console.WriteLine("|| 4. Salir                                  ||");
+            Console.WriteLine("|| 4. Volver al Menú Principal               ||");
             Console.WriteLine("-----------------------------------------------");
             Console.Write("Seleccione una opción: ");
             opcion = Convert.ToInt32(Console.ReadLine());
@@ -349,6 +349,7 @@ class Program
                         almacenes[almacenSeleccionado].Add(productoIngresar, cantidadIngresar);
                     }
                     Console.WriteLine("Confirmación: Producto ingresado en el almacén exitosamente.");
+                    Console.ReadLine();
                     break;
                 case 2:
                     Console.Clear();
@@ -373,6 +374,7 @@ class Program
                     {
                         Console.WriteLine("Almacén o producto no encontrado, o cantidad insuficiente.");
                     }
+                    Console.ReadLine();
                     break;
                 case 3:
                     Console.Clear();
@@ -407,6 +409,7 @@ class Program
                     Console.WriteLine("Opción inválida. Intente de nuevo.");
                     break;
             }
+            Console.Clear();
         } while (opcion != 4);
     }
 

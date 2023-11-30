@@ -203,7 +203,7 @@ class Program
     {
         // Implementar la lógica para gestionar almacenes aquí
     }
-    static void GestionarAlmacenes()
+    static void Gestionar()
     {
         bool volver = false;
 
@@ -298,6 +298,104 @@ class Program
 
         Console.ReadLine();
     }
+    class InventoryManagement
+    {
+    static void Main()
+    {
+        // Supongamos que cada almacén es un diccionario que almacena productos y sus cantidades
+        Dictionary<string, Dictionary<string, int>> almacenes = new Dictionary<string, Dictionary<string, int>>();
+        int opcion = 0;
+        do
+        {
+            Console.WriteLine("-----------------------------------------------");
+            Console.WriteLine("|| Agregar y Extraer Productos - Mi Tiendita ||");
+            Console.WriteLine("-----------------------------------------------");
+            Console.WriteLine("|| 1. Ingresar Producto al Almacén           ||");
+            Console.WriteLine("|| 2. Extraer Producto del Almacén           ||");
+            Console.WriteLine("|| 3. Ver Stock Actual                       ||");
+            Console.WriteLine("|| 4. Salir                                  ||");
+            Console.WriteLine("-----------------------------------------------");
+            Console.Write("Seleccione una opción: ");
+            opcion = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("------------------------------------------------------");
 
+            switch (opcion)
+            {
+                case 1:
+                    Console.WriteLine("===== Pantalla para Ingresar Producto en Almacén =====");
+                    Console.WriteLine("------------------------------------------------------");
+                    Console.Write("Seleccione el almacén: ");
+                    string almacenSeleccionado = Console.ReadLine();
+                    Console.WriteLine("[ " + almacenSeleccionado + " ]");
+                    Console.Write("Ingrese el producto a ingresar: ");
+                    string productoIngresar = Console.ReadLine();
+                    Console.WriteLine("[ " + productoIngresar + " ]");
+                    Console.Write("Ingrese la cantidad a ingresar: ");
+                    int cantidadIngresar = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("[ " + cantidadIngresar + " ]");
+                    Console.WriteLine("-----------------------------------------------");
+                    if (!almacenes.ContainsKey(almacenSeleccionado))
+                    {
+                        almacenes[almacenSeleccionado] = new Dictionary<string, int>();
+                    }
+                    if (almacenes[almacenSeleccionado].ContainsKey(productoIngresar))
+                    {
+                        almacenes[almacenSeleccionado][productoIngresar] += cantidadIngresar;
+                    }
+                    else
+                    {
+                        almacenes[almacenSeleccionado].Add(productoIngresar, cantidadIngresar);
+                    }
+                    Console.WriteLine("Confirmación: Producto ingresado en el almacén exitosamente.");
+                    break;
+                case 2:
+                    Console.WriteLine("===== Pantalla para Extraer Producto del Almacén =====");
+                    Console.WriteLine("------------------------------------------------------");
+                    Console.Write("Seleccione el almacén: ");
+                    string almacenSeleccionadoExtraer = Console.ReadLine();
+                    Console.WriteLine("[ " + almacenSeleccionadoExtraer + " ]");
+                    Console.Write("Ingrese el producto a extraer: ");
+                    string productoExtraer = Console.ReadLine();
+                    Console.WriteLine("[ " + productoExtraer + " ]");
+                    Console.Write("Ingrese la cantidad a extraer: ");
+                    int cantidadExtraer = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("[ " + cantidadExtraer + " ]");
+                    Console.WriteLine("-----------------------------------------------");
+                    if (almacenes.ContainsKey(almacenSeleccionadoExtraer) && almacenes[almacenSeleccionadoExtraer].ContainsKey(productoExtraer) && almacenes[almacenSeleccionadoExtraer][productoExtraer] >= cantidadExtraer)
+                    {
+                        almacenes[almacenSeleccionadoExtraer][productoExtraer] -= cantidadExtraer;
+                        Console.WriteLine("Confirmación: Producto extraído del almacén exitosamente.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Almacén o producto no encontrado, o cantidad insuficiente.");
+                    }
+                    break;
+                case 3:
+                    Console.WriteLine("===== Pantalla para Ver Stock Actual =====");
+                    Console.WriteLine("------------------------------------------------------");
+                    Console.WriteLine("Stock Actual en Todos los Almacenes:");
+                    int contador = 1;
+                    foreach (KeyValuePair<string, Dictionary<string, int>> almacen in almacenes)
+                    {
+                        foreach (KeyValuePair<string, int> producto in almacen.Value)
+                        {
+                            Console.WriteLine("Producto " + contador + ": " + producto.Key + " - Almacén: " + almacen.Key + " - Cantidad: " + producto.Value);
+                            contador++;
+                        }
+                    }
+                    Console.WriteLine("-----------------------------------------------");
+                    break;
+                case 4:
+                    Console.WriteLine("Saliendo...");
+                    break;
+                default:
+                    Console.WriteLine("Opción inválida. Intente de nuevo.");
+                    break;
+            }
+        } while (opcion != 4);
+    }
 }
+}
+
 

@@ -375,21 +375,31 @@ class Program
                 case 3:
                     Console.Clear();
                     Console.WriteLine("===== Pantalla para Ver Stock Actual =====");
-                    Console.WriteLine("------------------------------------------------------");
-                    Console.WriteLine("Stock Actual en Todos los Almacenes:");
-                    int contador = 1;
+                    Console.WriteLine("-----------------------------------------------");
+
+                    int totalProductos = 1; // Inicializar contador total de productos
+
                     foreach (KeyValuePair<string, Dictionary<string, int>> almacen in almacenes)
                     {
+                        Console.WriteLine($"Almacén: {almacen.Key}");
+                        Console.WriteLine("------------------------------------------------------");
+                        Console.WriteLine("| No. | Producto                | Cantidad |");
+                        Console.WriteLine("------------------------------------------------------");
+
+                        int contador = 1;
                         foreach (KeyValuePair<string, int> producto in almacen.Value)
                         {
-                            Console.WriteLine("Producto " + contador + ": " + producto.Key + " - Almacén: " + almacen.Key + " - Cantidad: " + producto.Value);
+                            Console.WriteLine($"| {totalProductos}   | {producto.Key,-24} | {producto.Value,-8} |");
+                            totalProductos++;
                             contador++;
                         }
+
+                        Console.WriteLine("------------------------------------------------------");
+                        Console.WriteLine();
                     }
-                    Console.WriteLine("-----------------------------------------------");
-                    break;
-                case 4:
-                    Console.WriteLine("Saliendo...");
+
+                    Console.WriteLine("Presione Enter para continuar...");
+                    Console.ReadLine();
                     break;
                 default:
                     Console.WriteLine("Opción inválida. Intente de nuevo.");
@@ -399,7 +409,6 @@ class Program
     }
 
 }
-
 
 
 

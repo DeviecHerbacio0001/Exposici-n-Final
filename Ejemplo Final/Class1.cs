@@ -56,6 +56,7 @@ class Program
         bool volver = false;
         while (true)
         {
+            Console.Clear();
             Console.WriteLine("==================================================");
             Console.WriteLine("||                                              ||");
             Console.WriteLine("||   Gestionar Productos - Mi Tiendita          ||");
